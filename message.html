@@ -1,0 +1,14 @@
+{% extends 'msgapp/base.html' %}
+{% load static %}
+
+{% block content %}
+<h1> BreastScreening {{ message_id }}</h1>
+   {% for message in messages %}
+        <ul>
+           Hi {{ message.lname }},
+            the test which you took on {{ message.encounter_datetime }} at {{ message.location }}
+            hospital is out. Please find time and visit us for more information.
+        </ul>
+    {% endfor %}
+
+{% endblock %}

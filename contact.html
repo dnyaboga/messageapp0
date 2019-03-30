@@ -1,0 +1,32 @@
+{% extends 'msgapp/base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 mx-auto" style="margin-top: 70px">
+            <form action="{% url 'contact' %}" method="post">
+                {% csrf_token %}
+                <h4 style="text-align:center;color:green;margin-top:0;margin-bottom:1em;">
+                    Enter Phone number here</h4>
+                <div class="form-group row">
+                    <label for="example-email-input" class="col-2 col-form-label">Person_id</label>
+                    <div class="col-10">
+                        <input name="person" class="form-control" type="number" id="person" style="margin-left:4em;">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="example-email-input" class="col-2 col-form-label">Phone_number</label>
+                    <div class="col-10">
+                        <input name="phone_number" class="form-control" type="number" id="phone_number" style="margin-left:4em;">
+                    </div>
+                </div>
+                <div class="pull-center">
+                    <button type="submit" class="btn btn-primary float-right btn btn-info">Submit</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</div>
+{% endblock %}
