@@ -10,7 +10,8 @@ urlpatterns = [
     path('notify', views.notify, name='notify'),
     path('person', views.person, name='person'),
     path('contact', views.contact, name='contact'),
-    path('message', views.message, name='message'),
+    path('messages', views.messages, name='messages'),
+    path('<int:message1_id>', views.message1, name='message1'),
 
 
 ]

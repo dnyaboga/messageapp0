@@ -25,6 +25,7 @@ class Contact(models.Model):
 
 class BreastScreening(models.Model):
     person=models.ForeignKey(Person, verbose_name="person_id", default=1, on_delete= models.SET_DEFAULT)
+    encounter_type=models.CharField(max_length=100)
     encounter_datetime=models.DateField(blank=True,null=True)
     location=models.CharField(max_length=100)
     fname=models.CharField(max_length=100)
@@ -38,7 +39,10 @@ class BreastScreening(models.Model):
         verbose_name_plural='BreastScreening'
 
     def __str__(self):
-        return str(self.person)
+        return f"Hi {self.lname}, \n" \
+            f"the {self.encounter_type} test which you took on {self.encounter_datetime} at {self.location}\n" \
+            f"Hospital is out. Please find time and visit our oncology clinic at {self.location }\n" \
+            f"hospital from tomorrow to collect your results. For queries, please call +254788888888"
 
 
 class BreastResult(models.Model):
@@ -56,6 +60,8 @@ class BreastResult(models.Model):
 
 class CervicalScreening(models.Model):
     person = models.ForeignKey(Person, verbose_name="person_id", default=1, on_delete=models.SET_DEFAULT)
+    encounter_type = models.CharField(max_length=100)
+    person = models.ForeignKey(Person, verbose_name="person_id", default=1, on_delete=models.SET_DEFAULT)
     encounter_datetime=models.DateField(blank=True,null=True)
     location=models.CharField(max_length=100)
     fname=models.CharField(max_length=100)
@@ -68,14 +74,15 @@ class CervicalScreening(models.Model):
         verbose_name_plural='CervicalScreening'
 
     def __str__(self):
-        return self.lname
-
+        return f"Hi {self.lname}, \n" \
+            f"the {self.encounter_type} test which you took on {self.encounter_datetime} at {self.location}\n" \
+            f"Hospital is out. Please find time and visit our oncology clinic at {self.location}\n" \
+            f"hospital from tomorrow to collect your results. For queries, please call +254788888888"
 
 class CervicalResult(models.Model):
-    breast_screening = models.ForeignKey(CervicalScreening, verbose_name="Patient_id", default=1,
-                                         on_delete=models.SET_DEFAULT)
-    result_date=models.DateField(blank=True,null=True)
-    results=models.CharField(max_length=100,blank=True,null=True)
+    Person = models.ForeignKey(CervicalScreening, verbose_name="Person_id", default=1, on_delete=models.SET_DEFAULT)
+    result_date = models.DateField(blank=True, null=True)
+    results = models.CharField(max_length=100, blank=True, null=True)
 
     class Meta:
         verbose_name_plural='CervicalResult'
