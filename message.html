@@ -1,14 +1,13 @@
 {% extends 'msgapp/base.html' %}
 {% load static %}
 
-{% block content %}
-<h1> BreastScreening {{ message_id }}</h1>
-   {% for message in messages %}
-        <ul>
-           Hi {{ message.lname }},
-            the test which you took on {{ message.encounter_datetime }} at {{ message.location }}
-            hospital is out. Please find time and visit us for more information.
-        </ul>
-    {% endfor %}
 
+{% block content %}
+<h1> CervicalScreening {{ message.id }}</h1>
+        <ul>
+            Hi {{ messages.lname }},
+            the {{ messages.encounter_type }} test which you took on {{ messages.encounter_datetime }} at {{ messages.location }}
+            Hospital is out. Please find time and visit our oncology clinic at {{ messages.location }} hospital from tomorrow to collect your results.
+            For queries, please call +254788888888</a>
+        </ul>
 {% endblock %}

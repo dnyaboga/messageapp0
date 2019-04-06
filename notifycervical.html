@@ -4,10 +4,10 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-6 mx-auto" style="margin-top: 70px">
-            <form action="{% url 'notifybreast' %}" method="post">
+            <form action="{% url 'msgapp:notifycervical' %}" method="post">
                 {% csrf_token %}
                 <h4 style="text-align:center;color:green;margin-top:0;margin-bottom:1em;">
-                    Send Breast patient notification message here</h4>
+                    Send Cervical patient notification message here</h4>
                 <div class="form-group row">
                     <label for="example-email-input" class="col-2 col-form-label">Person_id</label>
                     <div class="col-10">
@@ -30,12 +30,12 @@
 
 
 
-            <h5 style="margin-top:4em;"> The following message has ben sent to {{ message.id }}</h5>
+            <h6 style="margin-top:4em;"> Message sent to {{ name }} successfully</h6>
 
                 <ul>
-                    Hi {{ notifys.lname }},
-                    the {{ notifys.encounter_type }} test which you took on {{ notifys.encounter_datetime }} at {{ notifys.location }}
-                    Hospital is out. Please find time and visit our oncology clinic at {{ messages.location }} hospital from tomorrow to collect your results.
+                    Hi {{ notifycervical.lname }},
+                    the {{ notifycervical.encounter_type }} test which you took on {{ notifycervical.encounter_datetime }} at {{ notifycervical.location }}
+                    Hospital is out. Please find time and visit our oncology clinic at {{ notifycervical.location }} hospital from tomorrow to collect your results.
                     For queries, please call +254788888888</a>
                 </ul>
 

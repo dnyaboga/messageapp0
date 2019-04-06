@@ -4,10 +4,24 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-6 mx-auto" style="margin-top: 30px">
-            <form action="{% url 'cervicalscreening' %}" method="post">
+            <form action="{% url 'msgapp:cervicalscreening' %}" method="post">
                 {% csrf_token %}
                 <h4 style="text-align:center;color:green;margin-top:0;margin-bottom:1em;">
                     Cervical Cancer Screening Numbers</h4>
+               <div class="form-group row">
+                    <label for="example-email-input" class="col-2 col-form-label">Person_id</label>
+                    <div class="col-10">
+                        <input name="person_id" class="form-control" type="number" style="margin-left:4em;">
+                    </div>
+                </div>
+                 <div class="form-group row col-10">
+                    <label name="type_of_abnormality" for="example-email-input" style="margin-right:3em;">Encounter_type</label>
+                    <select name="encounter_type" style="margin-right:4em;">
+                        <option selected>Choose here</option>
+                        <option value="cervical cancer screening">cervical cancer screening</option>
+                        <option value="other">other</option>
+                    </select>
+                </div>
                 <div class="form-group row">
                     <label for="example-email-input" class="col-2 col-form-label">encounter_datetime</label>
                     <div class="col-10">
@@ -32,14 +46,16 @@
                         <input name="lname" class="form-control" type="text" style="margin-left:4em;">
                     </div>
                 </div>
-                <div class="form-group row col-10">
-                    <label for="Gender"
-                           style="margin-right:7em;" name="gender">Gender</label>
-                    <div>
-                        <input type="radio" id="male" name="gender" value="male"><label for="male">Male</label>
-                        <input type="radio" id="female" name="gender" value="female"><label for="female">Female</label>
-                        <input type="radio" id="other" name="gender" value="Other" checked><label
-                            for="other">Other</label>
+                <div class="form-group row">
+                    <label for="example-email-input" class="col-2 col-form-label">Age</label>
+                    <div class="col-10">
+                        <input name="age" class="form-control" type="number" style="margin-left:4em;">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="example-email-input" class="col-2 col-form-label">Phone_number</label>
+                    <div class="col-10">
+                        <input name="contact" class="form-control" type="number" style="margin-left:4em;">
                     </div>
                 </div>
 
@@ -47,16 +63,10 @@
                     <label name="type_of_abnormality" for="example-email-input" style="margin-right:4em;">Type_of_abnormality</label>
                     <select name="type_of_abnormality" style="margin-right:4em;">
                         <option selected>Choose here</option>
-                        <option value="breast lumps">breast lumps</option>
-                        <option value="breast discharge">breast discharge</option>
+                        <option value="cervical pain">cervical pain</option>
+                        <option value="vaginal discharge">vaginal discharge</option>
                         <option value="dense nodularity">dense nodularity</option>
                     </select>
-                </div>
-                <div class="form-group row">
-                    <label for="example-email-input" class="col-2 col-form-label">Age</label>
-                    <div class="col-10">
-                        <input name="age" class="form-control" type="number" style="margin-left:4em;">
-                    </div>
                 </div>
 
                 <div class="pull-right">

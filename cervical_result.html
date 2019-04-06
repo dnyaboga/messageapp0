@@ -4,20 +4,20 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-6 mx-auto" style="margin-top: 70px">
-            <form action="{% url 'cervicalresult' %}" method="post">
+            <form action="{% url 'msgapp:cervicalresult' %}" method="post">
                 {% csrf_token %}
                 <h4 style="text-align:center;color:green;margin-top:0;margin-bottom:1em;">
                     Cervical Cancer Screening Results</h4>
                 <div class="form-group row">
-                    <label for="example-email-input" class="col-2 col-form-label">results_date</label>
+                    <label for="example-email-input" class="col-2 col-form-label">Patient_id</label>
                     <div class="col-10">
-                        <input name="result_date" class="form-control" type="date" id="example-email-input" style="margin-left:4em;">
+                        <input name="patient_id" class="form-control" type="number" id="patient_id" style="margin-left:4em;">
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="example-email-input" class="col-2 col-form-label">Person_id</label>
+                    <label for="example-email-input" class="col-2 col-form-label">results_date</label>
                     <div class="col-10">
-                        <input name="person_id" class="form-control" type="number" style="margin-left:4em;">
+                        <input name="result_date" class="form-control" type="date" id="example-email-input" style="margin-left:4em;">
                     </div>
                 </div>
                 <div class="form-group row col-10">

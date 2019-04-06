@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-6 mx-auto" style="margin-top: 70px">
-            <form action="{% url 'contact' %}" method="post">
+            <form action="{% url 'msgapp:contact' %}" method="post">
                 {% csrf_token %}
                 <h4 style="text-align:center;color:green;margin-top:0;margin-bottom:1em;">
                     Enter Phone number here</h4>
@@ -20,6 +20,7 @@
                         <input name="phone_number" class="form-control" type="number" id="phone_number" style="margin-left:4em;">
                     </div>
                 </div>
+
                 <div class="pull-center">
                     <button type="submit" class="btn btn-primary float-right btn btn-info">Submit</button>
                 </div>

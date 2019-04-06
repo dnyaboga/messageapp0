@@ -22,7 +22,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="{% url 'msgapp:home' %}">Home <span class="sr-only">(current)</span></a>
                 </li>
 
                 <li class="nav-item dropdown">
@@ -31,15 +31,17 @@
                         ScreeningData
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{% url 'message' %}">Message</a>
+                        <a class="dropdown-item" href="{% url 'msgapp:person' %}">Person</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="{% url 'person' %}">Person</a>
+                        <a class="dropdown-item" href="{% url 'msgapp:patient' %}">Patient</a>
                         <div class="dropdown-divider"></div>
-                         <a class="dropdown-item" href="{% url 'contact' %}">Contact</a>
+                         <a class="dropdown-item" href="{% url 'msgapp:contact' %}">Contact</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="{% url 'breastscreening' %}">Breast cancer screening</a>
+                        <a class="dropdown-item" href="{% url 'msgapp:encounter' %}">Encounter_type</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="{% url 'cervicalscreening' %}">Cervical cancer screening</a>
+                        <a class="dropdown-item" href="{% url 'msgapp:breastscreening' %}">Breast cancer screening</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="{% url 'msgapp:cervicalscreening' %}">Cervical cancer screening</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
@@ -48,11 +50,21 @@
                         Screening Results
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{% url 'breastresult' %}">Breast cancer screening results</a>
+                        <a class="dropdown-item" href="{% url 'msgapp:breastresult' %}">Breast cancer screening results</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="{% url 'cervicalresult' %}">Cervical cancer screening results</a>
+                        <a class="dropdown-item" href="{% url 'msgapp:cervicalresult' %}">Cervical cancer screening results</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        NotifyPatients
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{% url 'msgapp:notifybreast' %}">Notify breast cancer patient</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="{% url 'notify' %}">Notify Client</a>
+                        <a class="dropdown-item" href="{% url 'msgapp:notifycervical' %}">Notify cervical cancer patient</a>
+                        <div class="dropdown-divider"></div>
                     </div>
                 </li>
             </ul>
